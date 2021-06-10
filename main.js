@@ -2,26 +2,28 @@
 
 const str = 'hello world! what a nice Wednesday morning.';
 
-//problem name
-
+//Problem name
 console.log("xify");
 
 //function
-
 function xify(str) {
 
+    //output string definition
     let outputStr = '';
 
+    //for loop
     for (const ch of str) {
 
-
+        //If statement
         if (ch !== "x") {
 
+            //Index replacement
             outputStr += "x";
         } 
 
     }
 
+    //return statement
     return outputStr;
 
 }
@@ -33,23 +35,24 @@ console.log();
 console.log("yellingChars");
 
 //function
-
 function yellingChars(str) {
 
-    //output
+    //output string definition
     let outputStr = '';
     
     //for loop
     for (const ch of str) {
+        
         //if the character doesnt include a !
         if (ch !== "!") {
-        //output
+        
+        //Output string
         outputStr += ch + "!";
         
         }
 
     }
-
+    //Function Return
     return outputStr;
 
 }
@@ -211,29 +214,39 @@ console.log("ciEmailify");
 const string = 'Colin Jaffe';
 
 //function
-
 function ciEmailify(string) {
 
+    //Output string definition
     let outputString = '';
 
+    //Lowercase String
     const lCstring = string.toLowerCase();
 
+    //For of statement
     for (const ch of lCstring) {
 
+        //If not a space statement
         if (ch !== ' ') {
-   
+            
+            //Output string modification
             outputString += ch;
-   
+
+        //If character is a space statement    
         } if (ch === ' ') {
 
+            //Outpu string modification to "."
             outputString += '.';
    
+        }
+
     }
 
-}
-    return outputString + "@codeimmersives.com";
+//Retun statement with email domain
+return outputString + "@codeimmersives.com";
+
 }
 
+//Function log out
 console.log(ciEmailify(string));
 console.log();
 
@@ -296,16 +309,15 @@ function crazyCase(str) {
 
     let outputString = '';
 
-    const lCstr = str.toLowerCase();
-
-    const uCstr = str.toUpperCase();
-
-    for (i = 0; i < lCstr.length; i++) {
+    for (i = 0; i < str.length; i++) {
 
         if (str[i] % 2 === 1) {
    
-            outputString += uCstr[i];
+            outputString += str[i].toLowerCase();
 
+        } if (str[i] % 2 === 0) {
+
+            outputString += str[i].toUpperCase();
         }
     }
 
@@ -316,31 +328,46 @@ function crazyCase(str) {
 console.log(crazyCase(str));
 console.log();
 
-// //Problem name
-// console.log("titleCase");
+//Problem name
+console.log("titleCase");
 
-// //function
-// function titleCase(str) {
+//function
+function titleCase(str) {
 
-//     let outputString = '';
+    //Output string definition
+    let outputString = '';
 
-//     const lCstr = str.toLowerCase();
+    //Capitilize flag
+    let shouldCapitalize = true;
 
-//     for (i = 0; i < str.length; i++) {
+    //for of loop
+    for (const char of str) {
+        
+        //is the char a space?
+        const isSpace = char === ' ';
+
+        if (shouldCapitalize) {
+
+        outputString += char.toUpperCase();
+
+        } else {
+
+            outputString += char.toLowerCase();
+        }
+
+        shouldCapitalize = isSpace;
    
-//             outputString += ch;
-   
-//     }
+    }
+    return outputString;
+}
 
-//     return outputString;
-// }
-
-// console.log(titleCase(str));
-// console.log();
+console.log(titleCase(str));
+console.log();
 
 // //Problem name
 // console.log("camelCase");
 // console.log();
-// //Problem name
-// console.log("crazyCase2ReturnOfCrazyCase`");
-// console.log();
+
+//Problem name
+console.log("crazyCase2ReturnOfCrazyCase`");
+console.log();
